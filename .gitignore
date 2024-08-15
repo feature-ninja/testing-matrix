@@ -1,0 +1,10 @@
+/.idea
+/.phpunit.cache
+/.vscode
+/build
+/coverage
+/vendor
+.phpunit.result.cache
+composer.lock
+phpstan.neon
+phpunit.xml
