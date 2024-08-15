@@ -1,7 +1,7 @@
 # Testing Matrix
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/feature-ninja/testing-matrix.svg?style=flat-square)](https://packagist.org/packages/feature-ninja/testing-matrix)
-[![Tests](https://img.shields.io/github/actions/workflow/status/feature-ninja/testing-matrix/run-phpunit.yml?branch=main&label=tests&style=flat-square)](https://github.com/feature-ninja/testing-matrix/actions/workflows/run-phpunit.yml)
+[![Tests](https://img.shields.io/github/actions/workflow/status/feature-ninja/testing-matrix/tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/feature-ninja/testing-matrix/actions/workflows/tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/feature-ninja/testing-matrix.svg?style=flat-square)](https://packagist.org/packages/feature-ninja/testing-matrix)
 
 Easily test multiple scenarios by creating a testing matrix
