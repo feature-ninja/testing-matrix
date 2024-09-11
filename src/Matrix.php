@@ -19,14 +19,19 @@ final class Matrix
 
         foreach (self::recurse($matrix, []) as $result) {
             $key = implode(' ', array_map(
-                fn (mixed $value, int $i) => sprintf(
+                fn (Value $value, int $i) => sprintf(
                     '%s=%s',
                     $names[$i],
-                    json_encode($value),
+                    $value->label,
                 ),
                 $result,
                 array_keys($result),
             ));
+
+            $result = array_map(
+                fn (Value $value) => $value->resolve(),
+                $result,
+            );
 
             yield $key => $result;
         }
@@ -35,7 +40,7 @@ final class Matrix
     /**
      * @param  array<int, mixed>  $matrix
      * @param  array<int, mixed>  $head
-     * @return Generator<int, array<int, mixed>>
+     * @return Generator<int, array<int, Value>>
      */
     private static function recurse(array $matrix, array $head): Generator
     {
@@ -46,6 +51,10 @@ final class Matrix
         }
 
         foreach (array_shift($matrix) as $value) {
+            if (! $value instanceof Value) {
+                $value = Value::wrap($value);
+            }
+
             foreach (self::recurse($matrix, [...$head, $value]) as $result) {
                 yield $result;
             }
