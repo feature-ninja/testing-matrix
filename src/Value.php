@@ -17,9 +17,7 @@ final readonly class Value
     {
         return new self(
             $label,
-            is_callable($value)
-                ? $value(...)
-                : fn () => $value,
+            fn () => $value,
         );
     }
 
