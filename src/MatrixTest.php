@@ -16,7 +16,7 @@ final class MatrixTest extends TestCase
             'php' => [8.3, 8.4],
             'node' => [
                 Value::of('18', 18),
-                Value::of('20', fn () => 20),
+                Value::of('20', 20),
             ],
             'postgres' => [
                 Value::of('v15', '15.0'),
